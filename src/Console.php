@@ -431,4 +431,23 @@ class Console
 
 		return $result;
 	}
+
+	/**
+	 * Handles the exception
+	 */
+	public function throws(\Throwable $e) : void
+	{
+		$output[] = sprintf('Caught exception [%s]', get_class($e));
+		$output[] = '';
+		$output[] = $e->getMessage();
+		$output[] = '';
+		$output[] = sprintf('%s on line %d', $e->getFile(), $e->getLine());
+		$output[] = '';
+		$output[] = $e->getTraceAsString();
+
+		$this->block(implode(PHP_EOL, $output), [
+			self::FOREGROUND_WHITE,
+			self::BACKGROUND_RED,
+		]);
+	}
 }
