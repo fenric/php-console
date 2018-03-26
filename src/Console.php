@@ -181,12 +181,10 @@ class Console
 			{
 				return $default;
 			}
-
 			if (0 === strncasecmp($input, 'y', 1))
 			{
 				return true;
 			}
-
 			if (0 === strncasecmp($input, 'n', 1))
 			{
 				return false;
