@@ -220,7 +220,7 @@ class Console
 	/**
 	 * Outputs a block
 	 */
-	public function block(string $string, array $styles = []) : string
+	public function block(string $string, array $styles = [])
 	{
 		$width = 100;
 		$padding = 1;
